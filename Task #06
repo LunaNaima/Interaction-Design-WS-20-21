@@ -1,0 +1,65 @@
+bvudsnciadskma
+##hello##<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voice User Interface Protoype</title>
+    <script src="js/libs/artyom.window.min.js"></script>
+    <script src="js/playgroud-artyom-script.js"></script>
+</head>
+<body>
+  <div>
+  <input type="button" onclick="startArtyom()" value="start voice commands"/><br>
+  <input type="button" onclick="stopArtyom()" value="stop listening"/><br>
+<span id="output"></span>
+  </div>
+  <script>
+
+  artyom.addCommands([
+{
+description:"artyom can talk too, lets say something if we say hello",
+indexes:["hello","hey"],
+action:function(i){
+
+if (i==0){
+  artyom.say("Hello! How are you?");
+}
+
+}
+},
+{
+  indexes:["goodbye"],
+  action:function(){
+    alert("now all is over.");
+  }
+}
+
+  ]);
+
+  artyom.redirectRecognizedTextOutput(function(text,isFinal){
+    var span=document.getElementById('output');
+
+    if(isFinal){
+      span.innerHTML = '';
+    }else{
+      span.innerHTML=text;
+    }
+  });
+function startArtyom(){
+artyom.initialize({
+lang:"en-GB",
+continuous:false,
+debug:true,
+listen:true,
+
+});
+}
+function stopArtyom(){
+artyom.fatality();
+
+}
+  </script>
+</body>
+</html>
