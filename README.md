@@ -6,4 +6,3 @@
 [Task #04](https://github.com/LunaNaima/Interaction-Design-WS-20-21/wiki/Task-%234)<br>
 [Task #05](https://github.com/LunaNaima/Interaction-Design-WS-20-21/wiki/Task-%235)<br>
 [Task #06](https://github.com/LunaNaima/Interaction-Design-WS-20-21/tree/main/Luna%20Task06)<br>
-[Task #06 Video](https://youtu.be/6ngLat4a1qg)
